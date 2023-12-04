@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const dbURI =
-  "mongodb+srv://victorneez6:<password>@cluster0.akev7kv.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://victorneez6:123Mruc%21%40%23@cluster0.akev7kv.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
