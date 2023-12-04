@@ -1,4 +1,4 @@
-// const dbURI = 'mongodb+srv://victorneez6:<password>@cluster0.akev7kv.mongodb.net/?retryWrites=true&w=majority';
+// const dbURI = 'mongodb://localhost:27017/your-database-name';
 
 // mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
