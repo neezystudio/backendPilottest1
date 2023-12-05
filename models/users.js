@@ -12,6 +12,16 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  role:{
+    type: String,
+    required: true,
+    unique: true, 
+  },
+  subscribed:{
+    type: Boolean,
+    required: true,
+    unique: true,
+  },
   password: {
     type: String,
     required: true
