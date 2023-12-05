@@ -9,6 +9,7 @@ const {
   deleteProject,
 } = require("./controller");
 
+
 // Get all items
 router.get("/projects", getAllProjects);
 

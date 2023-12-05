@@ -9,13 +9,13 @@
 
 // app.use(cors());
 
-// // // Middleware for CORS
-// // app.use(cors());
+// // Middleware for CORS
+// app.use(cors());
 
-// // // Homepage route
-// // app.get("/", (req, res) => {
-// //   res.send("Welcome to the homepage!");
-// // });
+// // Homepage route
+// app.get("/", (req, res) => {
+//   res.send("Welcome to the homepage!");
+// });
 
 // // Start the server
 // app.listen(port, () => {

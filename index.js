@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
-const express = require('express');
-const app = require('./app');
+const express = require("express");
+// const app = require('./app');
 
-const cors = require('cors');
+const cors = require("cors");
 
 const app = express();
-const port = 3000;
-
+const port = 8080;
 
 app.use(cors());
 
@@ -24,10 +23,13 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // Bind connection to open event (to get notification of successful connection)
 db.once("open", () => {
   console.log("Connected to MongoDB database");
-  
+  app.get("/", (req, res) => {
+    res.send("Welcome to the homepage!");
+  });
+
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-});
+  });
 });
 
 // Close the Mongoose connection when the Node.js app is terminated
