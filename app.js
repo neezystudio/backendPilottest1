@@ -1,27 +1,23 @@
-const mongoose = require("mongoose");
+// // const mongoose = require("mongoose");
+// const express = require('express');
 
-const dbURI =
-  "mongodb+srv://victorneez6:123Mruc%21%40%23@cluster0.akev7kv.mongodb.net/?retryWrites=true&w=majority";
+// const cors = require('cors');
 
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+// const app = express();
+// const port = 3000;
 
-// Get the default connection
-const db = mongoose.connection;
 
-// Bind connection to error event (to get notification of connection errors)
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// app.use(cors());
 
-// Bind connection to open event (to get notification of successful connection)
-db.once("open", () => {
-  console.log("Connected to MongoDB database");
-});
+// // // Middleware for CORS
+// // app.use(cors());
 
-// Close the Mongoose connection when the Node.js app is terminated
-process.on("SIGINT", () => {
-  mongoose.connection.close(() => {
-    console.log(
-      "Mongoose default connection disconnected through app termination"
-    );
-    process.exit(0);
-  });
-});
+// // // Homepage route
+// // app.get("/", (req, res) => {
+// //   res.send("Welcome to the homepage!");
+// // });
+
+// // Start the server
+// app.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });

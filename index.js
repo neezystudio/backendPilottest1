@@ -1,20 +1,41 @@
-const app = require("./app");
+const mongoose = require("mongoose");
+const express = require('express');
+const app = require('./app');
 
-const express = require("express");
-const cors = require("cors");
+const cors = require('cors');
 
-// const app = express();
-const port = 3000; // You can use any port you prefer
+const app = express();
+const port = 3000;
 
-// Middleware for CORS
+
 app.use(cors());
 
-// Homepage route
-app.get("/", (req, res) => {
-  res.send("Welcome to the homepage!");
+const dbURI =
+  "mongodb+srv://victorneez6:123Mruc%21%40%23@cluster0.akev7kv.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Get the default connection
+const db = mongoose.connection;
+
+// Bind connection to error event (to get notification of connection errors)
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
+// Bind connection to open event (to get notification of successful connection)
+db.once("open", () => {
+  console.log("Connected to MongoDB database");
+  
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Close the Mongoose connection when the Node.js app is terminated
+process.on("SIGINT", () => {
+  mongoose.connection.close(() => {
+    console.log(
+      "Mongoose default connection disconnected through app termination"
+    );
+    process.exit(0);
+  });
 });
