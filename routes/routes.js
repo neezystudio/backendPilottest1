@@ -25,3 +25,6 @@ router.put("/projects/:id", updateProject);
 router.delete("/projects/:id", deleteProject);
 
 module.exports = router;
+
+
+//we can go this route or the other
