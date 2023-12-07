@@ -7,8 +7,7 @@ const {
   createProject,
   updateProject,
   deleteProject,
-} = require("./controller");
-
+} = require("../controllers/controller");
 
 // Get all items
 router.get("/projects", getAllProjects);

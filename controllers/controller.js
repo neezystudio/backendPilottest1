@@ -1,5 +1,5 @@
 // controller.js
-const Item = require("./models/projects"); // Import your MongoDB model
+const Item = require("../models/projects"); // Import your MongoDB model
 
 // Get all items
 exports.getAllProjects = async (req, res) => {
